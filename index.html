@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Aplikasi Permainan & Analisis Kata</h1>
+         
+    </header>
+
+    <nav>
+        <button class="tab-btn active" onclick="switchTab('detector')">Detektor Kata Majemuk</button>
+        <button class="tab-btn" onclick="switchTab('game')">Game Acak Kata</button>
+    </nav>
+
+    <main>
+        <!-- Bagian 1: Detektor Kata Majemuk -->
+        <section id="detector" class="tab-content active">
+            <h2>Detektor Kata Majemuk</h2>
+            <p>Masukkan dua kata dasar untuk memeriksa apakah membentuk kata majemuk.</p>
+            
+            <div class="input-group">
+                <input type="text" id="word1" placeholder="Kata Pertama (contoh: Rumah)">
+                <input type="text" id="word2" placeholder="Kata Kedua (contoh: Sakit)">
+                <button onclick="checkCompound()">Cek Kata</button>
+            </div>
+
+            <div id="detector-result" class="result-box hidden"></div>
+        </section>
+
+        <!-- Bagian 2: Game Acak Kata -->
+        <section id="game" class="tab-content">
+            <h2>Game Susun Kata</h2>
+            <p>Susun kembali huruf-huruf yang diacak menjadi kata yang benar!</p>
+
+            <div class="score-board">
+                <span>Skor: <strong id="score">0</strong></span>
+            </div>
+
+            <div class="game-box">
+                <div id="scrambled-word" class="word-display">----</div>
+                <p id="hint" class="hint-text">Clue: -</p>
+                
+                <input type="text" id="user-guess" placeholder="Ketik jawabanmu di sini...">
+                <button onclick="checkAnswer()">Jawab</button>
+                <button onclick="nextWord()" class="secondary-btn">Kata Selanjutnya</button>
+
+                <p id="game-feedback" class="feedback-text"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; GAWAD ABDULMALEK MOHAMMED AL-KMALI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
